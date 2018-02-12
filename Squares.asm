@@ -62,12 +62,12 @@ fail:	# prompt the error message
 	li $v0, 4 # 4 is to display a string
 	la $a0, failed_output # displays our failure message
 	syscall 
-	j exit
-exit:
-    	li      $v0, 10              # terminate program run and
-    	syscall                      # Exit 
+	j exit                     # Exit 
 success:
 	# print space, 32 is ASCII code for end of text
 	li $a0, 3
 	li $v0, 11  # syscall number for printing character
 	syscall
+exit:
+    	li      $v0, 10              # terminate program run and
+    	syscall 
